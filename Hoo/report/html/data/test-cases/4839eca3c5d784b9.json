@@ -1,0 +1,58 @@
+{
+  "uid" : "4839eca3c5d784b9",
+  "name" : "test_mine[case0]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "55306d616a7569c343b3708ab930fe49",
+  "time" : {
+    "start" : 1626747839513,
+    "stop" : 1626747880301,
+    "duration" : 40788
+  },
+  "status" : "broken",
+  "statusMessage" : "Exception: 2202005276啊啊.元素不存在",
+  "statusTrace" : "self = <test_mine.TestMine object at 0x000001539FC0FFC8>\ncase = {'id': 'mine_001', '优先级': 'P1', '前置条件': '', '是否执行': 'yes', ...}\n\n    @pytest.mark.parametrize(\"case\", run_ed)\n    def test_mine(self, case):\n        # case_id = case[ExcelConfig.case_id]\n        # print(case_id)\n        # case_catalog = case[ExcelConfig.case_catalog]\n        # case_name = case[ExcelConfig.case_name]\n        # case_priority = case[ExcelConfig.case_priority]\n        # case_is_run = case[ExcelConfig.case_is_run]\n        # case_preconditions = case[ExcelConfig.case_preconditions]\n        # case_step = case[ExcelConfig.case_step]\n        case_step_node = case[ExcelConfig.case_step_node]\n        date1 = analysis(case_step_node)\n        # print(date1)\n        # case_expected_outcome = case[ExcelConfig.case_expected_outcome]\n        case_expected_node = case[ExcelConfig.case_expected_node]\n        data2 = expected_analysis(case_expected_node)\n        print(data2)\n        d = ExecuteU2(\"851QFDSG22CDZ\", \"com.tencent.hobby\")\n        for step_node, expected_node in zip(date1, data2):\n            d.run_app(step_node)\n            time.sleep(0.5)\n            if type(expected_node) == str:\n>               d.app_assert(expected_node)\n\ntestcase\\test_mine.py:37: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <utils.uiauto_util.ExecuteU2 object at 0x000001539FC23288>\nelement = '2202005276啊啊'\n\n    def app_assert(self, element):\n        \"\"\"页面断言\"\"\"\n        if self.dv(text=element).exists(timeout=5):\n            # exists: 等待元素出现\n            print(\"success\")\n        if self.dv(resourceId=element).exists(timeout=5):\n            print(\"success\")\n        else:\n>           raise Exception(f\"{element}.元素不存在\")\nE           Exception: 2202005276啊啊.元素不存在\n\nutils\\uiauto_util.py:56: Exception",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "3552-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '2202005276啊啊, 男, 编辑资料, 我的购买'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4839eca3c5d784b9.json",
+  "parameterValues" : [ "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '2202005276啊啊, 男, 编辑资料, 我的购买'}" ]
+}

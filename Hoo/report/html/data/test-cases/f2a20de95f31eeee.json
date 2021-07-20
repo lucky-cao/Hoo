@@ -1,0 +1,56 @@
+{
+  "uid" : "f2a20de95f31eeee",
+  "name" : "test_mine[case2]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "22380043696c470ba798bdf9dedef50e",
+  "time" : {
+    "start" : 1626763387065,
+    "stop" : 1626763466015,
+    "duration" : 78950
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "15656-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_003', '用例目录': '头像', '用例名称': '我的画面点击头像', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击头像\\n2.再次点击头像或下拉头像', '步骤节点': '我的, com.tencent.hobby:id/user_head_icon\\n(0.424,0.702)', '预期结果': '1.头像放大表示\\n2.关闭放大头像画面，回到我的画面', '预期节点': 'com.tencent.hobby:id/user_head_icon\\n \\ncom.tencent.hobby:id/user_head_icon'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f2a20de95f31eeee.json",
+  "parameterValues" : [ "{'id': 'mine_003', '用例目录': '头像', '用例名称': '我的画面点击头像', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击头像\\n2.再次点击头像或下拉头像', '步骤节点': '我的, com.tencent.hobby:id/user_head_icon\\n(0.424,0.702)', '预期结果': '1.头像放大表示\\n2.关闭放大头像画面，回到我的画面', '预期节点': 'com.tencent.hobby:id/user_head_icon\\n \\ncom.tencent.hobby:id/user_head_icon'}" ]
+}

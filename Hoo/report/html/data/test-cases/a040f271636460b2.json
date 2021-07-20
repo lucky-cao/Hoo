@@ -1,0 +1,56 @@
+{
+  "uid" : "a040f271636460b2",
+  "name" : "test_mine[case0]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "55306d616a7569c343b3708ab930fe49",
+  "time" : {
+    "start" : 1626753647272,
+    "stop" : 1626753690154,
+    "duration" : 42882
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "20636-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '2202005276啊啊, 男, 编辑资料, 我的购买'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a040f271636460b2.json",
+  "parameterValues" : [ "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '2202005276啊啊, 男, 编辑资料, 我的购买'}" ]
+}

@@ -1,0 +1,117 @@
+{
+  "846a282fa744ba9244f8f13bfc25be28" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "84ab6e6943654065",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626766628974,
+        "stop" : 1626766691225,
+        "duration" : 62251
+      }
+    } ]
+  },
+  "22380043696c470ba798bdf9dedef50e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e1c6d4bd4c222758",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626766549168,
+        "stop" : 1626766628974,
+        "duration" : 79806
+      }
+    } ]
+  },
+  "38112308d51c6392a6ce8b9aace1f497" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "16ee745ddab3936a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626766767019,
+        "stop" : 1626766858956,
+        "duration" : 91937
+      }
+    } ]
+  },
+  "add816a275d5553758e4240094a665d7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f1d39ccaba19076a",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/btn_my_share.元素不存在",
+      "time" : {
+        "start" : 1626766488989,
+        "stop" : 1626766549113,
+        "duration" : 60124
+      }
+    } ]
+  },
+  "55306d616a7569c343b3708ab930fe49" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9c34cea2ede309d4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626766456499,
+        "stop" : 1626766488965,
+        "duration" : 32466
+      }
+    } ]
+  },
+  "bb56fc3e19c0a83b93a4d264c8fe76fd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ec087f1e04748f9f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626766691230,
+        "stop" : 1626766767009,
+        "duration" : 75779
+      }
+    } ]
+  }
+}

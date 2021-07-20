@@ -1,0 +1,7 @@
+"Status","Name","Duration in ms","Description"
+"passed","testcase.test_mine.TestMine#test_mine","62251",""
+"broken","testcase.test_mine.TestMine#test_mine","60124",""
+"passed","testcase.test_mine.TestMine#test_mine","91937",""
+"passed","testcase.test_mine.TestMine#test_mine","79806",""
+"passed","testcase.test_mine.TestMine#test_mine","32466",""
+"passed","testcase.test_mine.TestMine#test_mine","75779",""

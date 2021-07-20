@@ -1,0 +1,296 @@
+{
+  "uid" : "e1c6d4bd4c222758",
+  "name" : "test_mine[case2]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "22380043696c470ba798bdf9dedef50e",
+  "time" : {
+    "start" : 1626766549168,
+    "stop" : 1626766628974,
+    "duration" : 79806
+  },
+  "status" : "passed",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "16944-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_003', '用例目录': '头像', '用例名称': '我的画面点击头像', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击头像\\n2.再次点击头像或下拉头像', '步骤节点': '我的, com.tencent.hobby:id/user_head_icon\\n(0.424,0.702)', '预期结果': '1.头像放大表示\\n2.关闭放大头像画面，回到我的画面', '预期节点': 'com.tencent.hobby:id/user_head_icon\\n \\ncom.tencent.hobby:id/user_head_icon'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "15cbe6153069958",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626765975567,
+        "stop" : 1626766054191,
+        "duration" : 78624
+      }
+    }, {
+      "uid" : "c51fe61f2b0bc14c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626765571031,
+        "stop" : 1626765650281,
+        "duration" : 79250
+      }
+    }, {
+      "uid" : "429c68caf736f870",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626765122194,
+        "stop" : 1626765201358,
+        "duration" : 79164
+      }
+    }, {
+      "uid" : "7e9969425f5e4975",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626763844786,
+        "stop" : 1626763923566,
+        "duration" : 78780
+      }
+    }, {
+      "uid" : "f2a20de95f31eeee",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626763387065,
+        "stop" : 1626763466015,
+        "duration" : 78950
+      }
+    }, {
+      "uid" : "b31c684310b35a5c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626762682889,
+        "stop" : 1626762761959,
+        "duration" : 79070
+      }
+    }, {
+      "uid" : "fa1f4ead92f8d77e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626762269181,
+        "stop" : 1626762348328,
+        "duration" : 79147
+      }
+    }, {
+      "uid" : "2d2926883a8f28d0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626761167159,
+        "stop" : 1626761246284,
+        "duration" : 79125
+      }
+    }, {
+      "uid" : "38cc876a7699208d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626755210999,
+        "stop" : 1626755288523,
+        "duration" : 77524
+      }
+    }, {
+      "uid" : "7a07a15a1104bf64",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626754852813,
+        "stop" : 1626754931610,
+        "duration" : 78797
+      }
+    }, {
+      "uid" : "370fb9f220d06877",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626754194334,
+        "stop" : 1626754273361,
+        "duration" : 79027
+      }
+    }, {
+      "uid" : "4e1aafe9cd146d41",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626753749249,
+        "stop" : 1626753828377,
+        "duration" : 79128
+      }
+    }, {
+      "uid" : "ef919cfc88447e05",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626752109160,
+        "stop" : 1626752188290,
+        "duration" : 79130
+      }
+    }, {
+      "uid" : "cc71a3d9a118f564",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626751907382,
+        "stop" : 1626751977039,
+        "duration" : 69657
+      }
+    }, {
+      "uid" : "d0c92368d8e3ad0f",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626751514085,
+        "stop" : 1626751591544,
+        "duration" : 77459
+      }
+    }, {
+      "uid" : "1943ef7c1f0038e9",
+      "status" : "broken",
+      "statusDetails" : "Exception:  com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626751280321,
+        "stop" : 1626751326647,
+        "duration" : 46326
+      }
+    }, {
+      "uid" : "8e6a26dda9db0f2a",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626750887604,
+        "stop" : 1626750966282,
+        "duration" : 78678
+      }
+    }, {
+      "uid" : "8dc0382a2d0759bc",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626750640454,
+        "stop" : 1626750717841,
+        "duration" : 77387
+      }
+    }, {
+      "uid" : "bb98b60917f3599b",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626750353662,
+        "stop" : 1626750439648,
+        "duration" : 85986
+      }
+    }, {
+      "uid" : "a0a1f691503d67fb",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626749983376,
+        "stop" : 1626750051678,
+        "duration" : 68302
+      }
+    }, {
+      "uid" : "782db7ae57eff38a",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626749707907,
+        "stop" : 1626749770166,
+        "duration" : 62259
+      }
+    }, {
+      "uid" : "64e4557f0bc343ec",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626749003990,
+        "stop" : 1626749065639,
+        "duration" : 61649
+      }
+    }, {
+      "uid" : "42e93a2fabeb6e88",
+      "status" : "broken",
+      "statusDetails" : "Exception: com.tencent.hobby:id/user_head_icon.元素不存在",
+      "time" : {
+        "start" : 1626748544051,
+        "stop" : 1626748601976,
+        "duration" : 57925
+      }
+    }, {
+      "uid" : "ecb722fd7af0eada",
+      "status" : "broken",
+      "statusDetails" : "Exception: //android.widget.FrameLayout[2].元素不存在",
+      "time" : {
+        "start" : 1626748082431,
+        "stop" : 1626748131245,
+        "duration" : 48814
+      }
+    }, {
+      "uid" : "57d53c228889cace",
+      "status" : "broken",
+      "statusDetails" : "Exception: /.元素不存在",
+      "time" : {
+        "start" : 1626747778359,
+        "stop" : 1626747826039,
+        "duration" : 47680
+      }
+    }, {
+      "uid" : "53073419fc5df05f",
+      "status" : "broken",
+      "statusDetails" : "Exception: /.元素不存在",
+      "time" : {
+        "start" : 1626746778736,
+        "stop" : 1626746824019,
+        "duration" : 45283
+      }
+    }, {
+      "uid" : "1f938a5243d9c4a",
+      "status" : "broken",
+      "statusDetails" : "uiautomator2.exceptions.UiObjectNotFoundError: -32002 Client error: <> data: Selector [text='跳过'], method: None",
+      "time" : {
+        "start" : 1626745223674,
+        "stop" : 1626745267834,
+        "duration" : 44160
+      }
+    }, {
+      "uid" : "988cdc06736e2c1f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626691168636,
+        "stop" : 1626691224789,
+        "duration" : 56153
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e1c6d4bd4c222758.json",
+  "parameterValues" : [ "{'id': 'mine_003', '用例目录': '头像', '用例名称': '我的画面点击头像', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击头像\\n2.再次点击头像或下拉头像', '步骤节点': '我的, com.tencent.hobby:id/user_head_icon\\n(0.424,0.702)', '预期结果': '1.头像放大表示\\n2.关闭放大头像画面，回到我的画面', '预期节点': 'com.tencent.hobby:id/user_head_icon\\n \\ncom.tencent.hobby:id/user_head_icon'}" ]
+}

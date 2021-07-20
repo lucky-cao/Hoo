@@ -1,0 +1,58 @@
+{
+  "uid" : "40f6b3dfa813003f",
+  "name" : "test_mine[case1]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "add816a275d5553758e4240094a665d7",
+  "time" : {
+    "start" : 1626763783510,
+    "stop" : 1626763844729,
+    "duration" : 61219
+  },
+  "status" : "broken",
+  "statusMessage" : "Exception: com.tencent.hobby:id/btn_my_share.元素不存在",
+  "statusTrace" : "self = <test_mine.TestMine object at 0x000001D48149D248>\ncase = {'id': 'mine_002', '优先级': 'P0', '前置条件': '', '是否执行': 'yes', ...}\n\n    @pytest.mark.parametrize(\"case\", run_ed)\n    def test_mine(self, case):\n        # case_id = case[ExcelConfig.case_id]\n        # print(case_id)\n        # case_catalog = case[ExcelConfig.case_catalog]\n        # case_name = case[ExcelConfig.case_name]\n        # case_priority = case[ExcelConfig.case_priority]\n        # case_is_run = case[ExcelConfig.case_is_run]\n        # case_preconditions = case[ExcelConfig.case_preconditions]\n        # case_step = case[ExcelConfig.case_step]\n        case_step_node = case[ExcelConfig.case_step_node]\n        date1 = analysis(case_step_node)\n        # print(date1)\n        # case_expected_outcome = case[ExcelConfig.case_expected_outcome]\n        case_expected_node = case[ExcelConfig.case_expected_node]\n        data2 = expected_analysis(case_expected_node)\n        print(data2)\n        d = ExecuteU2(\"851QFDSG22CDZ\", \"com.tencent.hobby\")\n        for step_node, expected_node in zip(date1, data2):\n            d.run_app(step_node)\n            time.sleep(0.5)\n            # for expected_node in data2:\n            if type(expected_node) == str:\n>               d.app_assert(expected_node)\n\ntestcase\\test_mine.py:38: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <utils.uiauto_util.ExecuteU2 object at 0x000001D4814AD2C8>\nelement = 'com.tencent.hobby:id/btn_my_share'\n\n    def app_assert(self, element):\n        \"\"\"页面断言\"\"\"\n        time.sleep(0.7)\n        if self.dv(text=element).exists(timeout=5):\n            # exists: 等待元素出现\n            print(f\"{element}.success\")\n        elif self.dv(resourceId=element).exists(timeout=5):\n            print(f\"{element}.success\")\n        elif element == \" \":\n            pass\n        else:\n>           raise Exception(f\"{element}.元素不存在\")\nE           Exception: com.tencent.hobby:id/btn_my_share.元素不存在\n\nutils\\uiauto_util.py:59: Exception",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "6504-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_002', '用例目录': '分享', '用例名称': '我的画面点击分享按钮', '优先级': 'P0', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击分享按钮\\n2.点击【取消】按钮\\n3.再次点击频道的分享按钮，通过微信好友、朋友圈、QQ好友、QQ空间成功分享\\n4.点击分享的H5内容\\n5.点击用户头像/关注按钮/影响力/粉丝/关注/心愿单/评论按钮/收藏按钮/喜欢按钮/参与评论按钮/话题标签/登录嚯APP查看更多潮流内容\\n6.回到频道标签画面，点击频道的分享按钮，点击复制链接，复制的链接粘贴到微信/qq的聊天页面', '步骤节点': '我的\\ncom.tencent.hobby:id/btn_my_share\\n取消\\ncom.tencent.hobby:id/btn_my_share\\nQQ好友, 2202005252, 发送, 留在QQ\\n(0.424,0.702)', '预期结果': '1.分享控件支持微信好友、朋友圈、QQ好友、QQ空间、复制链接，取消按钮显示\\n2.关闭分享画面\\n3.分享的落地页\\n分享标题：为你推荐嚯APP上的@用户名 ，快来关注TA吧\\n分享图片：取标签头像\\n4.显示频道跟分享的一致，页面上常驻一个入口，可以打开或者下载app，话题动态没显示全时，在最底部会显示查看全部按钮\\n5.都可成功跳回个人主页画面\\n6.分享标题：为你推荐嚯APP上的@用户名 ，快来关注TA吧\\n下面的网页地址', '预期节点': 'com.tencent.hobby:id/btn_my_share\\ncom.tencent.hobby:id/btn_my_share\\n取消\\ncom.tencent.hobby:id/btn_my_share\\nQQ好友, 2202005252, 发送, 留在QQ'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "40f6b3dfa813003f.json",
+  "parameterValues" : [ "{'id': 'mine_002', '用例目录': '分享', '用例名称': '我的画面点击分享按钮', '优先级': 'P0', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击分享按钮\\n2.点击【取消】按钮\\n3.再次点击频道的分享按钮，通过微信好友、朋友圈、QQ好友、QQ空间成功分享\\n4.点击分享的H5内容\\n5.点击用户头像/关注按钮/影响力/粉丝/关注/心愿单/评论按钮/收藏按钮/喜欢按钮/参与评论按钮/话题标签/登录嚯APP查看更多潮流内容\\n6.回到频道标签画面，点击频道的分享按钮，点击复制链接，复制的链接粘贴到微信/qq的聊天页面', '步骤节点': '我的\\ncom.tencent.hobby:id/btn_my_share\\n取消\\ncom.tencent.hobby:id/btn_my_share\\nQQ好友, 2202005252, 发送, 留在QQ\\n(0.424,0.702)', '预期结果': '1.分享控件支持微信好友、朋友圈、QQ好友、QQ空间、复制链接，取消按钮显示\\n2.关闭分享画面\\n3.分享的落地页\\n分享标题：为你推荐嚯APP上的@用户名 ，快来关注TA吧\\n分享图片：取标签头像\\n4.显示频道跟分享的一致，页面上常驻一个入口，可以打开或者下载app，话题动态没显示全时，在最底部会显示查看全部按钮\\n5.都可成功跳回个人主页画面\\n6.分享标题：为你推荐嚯APP上的@用户名 ，快来关注TA吧\\n下面的网页地址', '预期节点': 'com.tencent.hobby:id/btn_my_share\\ncom.tencent.hobby:id/btn_my_share\\n取消\\ncom.tencent.hobby:id/btn_my_share\\nQQ好友, 2202005252, 发送, 留在QQ'}" ]
+}

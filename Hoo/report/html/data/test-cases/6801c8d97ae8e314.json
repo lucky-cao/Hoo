@@ -1,0 +1,76 @@
+{
+  "uid" : "6801c8d97ae8e314",
+  "name" : "test_mine[case0]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "55306d616a7569c343b3708ab930fe49",
+  "time" : {
+    "start" : 1626749382592,
+    "stop" : 1626749453274,
+    "duration" : 70682
+  },
+  "status" : "broken",
+  "statusMessage" : "uiautomator2.exceptions.UiObjectNotFoundError: -32001 Jsonrpc error: <androidx.test.uiautomator.UiObjectNotFoundException> data: UiSelector[TEXT=跳过], method: objInfo",
+  "statusTrace" : "self = <test_mine.TestMine object at 0x00000227F8170708>\ncase = {'id': 'mine_001', '优先级': 'P1', '前置条件': '', '是否执行': 'yes', ...}\n\n    @pytest.mark.parametrize(\"case\", run_ed)\n    def test_mine(self, case):\n        # case_id = case[ExcelConfig.case_id]\n        # print(case_id)\n        # case_catalog = case[ExcelConfig.case_catalog]\n        # case_name = case[ExcelConfig.case_name]\n        # case_priority = case[ExcelConfig.case_priority]\n        # case_is_run = case[ExcelConfig.case_is_run]\n        # case_preconditions = case[ExcelConfig.case_preconditions]\n        # case_step = case[ExcelConfig.case_step]\n        case_step_node = case[ExcelConfig.case_step_node]\n        date1 = analysis(case_step_node)\n        # print(date1)\n        # case_expected_outcome = case[ExcelConfig.case_expected_outcome]\n        case_expected_node = case[ExcelConfig.case_expected_node]\n        data2 = expected_analysis(case_expected_node)\n        print(data2)\n>       d = ExecuteU2(\"851QFDSG22CDZ\", \"com.tencent.hobby\")\n\ntestcase\\test_mine.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nutils\\uiauto_util.py:27: in __init__\n    self.dv(text=\"跳过\").click()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:151: in click\n    x, y = self.center(offset=offset)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:178: in center\n    lx, ly, rx, ry = self.bounds()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:165: in bounds\n    info = self.info\nD:\\Program Files\\Python37\\lib\\site-packages\\decorator.py:232: in fun\n    return caller(func, *(extras + args), **kw)\nD:\\Program Files\\Python37\\lib\\site-packages\\retry\\api.py:74: in retry_decorator\n    logger)\nD:\\Program Files\\Python37\\lib\\site-packages\\retry\\api.py:33: in __retry_internal\n    return f()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:130: in info\n    return self.jsonrpc.objInfo(self.selector)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:449: in __call__\n    http_timeout)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:455: in _jsonrpc_retry_call\n    return self._jsonrpc_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <uiautomator2.Device object at 0x00000227F8170B88>, method = 'objInfo'\nparams = ({'mask': 1, 'childOrSibling': [], 'childOrSiblingSelector': [], 'text': '跳过'},)\nhttp_timeout = 60\n\n    def _jsonrpc_call(self, method, params=[], http_timeout=60):\n        \"\"\" jsonrpc2 call\n        Refs:\n            - http://www.jsonrpc.org/specification\n    \n        Raises:\n            出现的错误一般有2大类:\n                - JSONRPC服务端异常 ServerError\n                - 远程方法返回的错误 RequestError\n        \"\"\"\n        request_start = time.time()\n        data = {\n            \"jsonrpc\": \"2.0\",\n            \"id\": self._jsonrpc_id(method),\n            \"method\": method,\n            \"params\": params,\n        }\n        data = json.dumps(data)\n        res = self.http.post(\"/jsonrpc/0\",\n                             headers={\"Content-Type\": \"application/json\"},\n                             data=data,\n                             timeout=http_timeout)\n    \n        if res.status_code == 502:\n            raise GatewayError(\n                res, \"gateway error, time used %.1fs\" %\n                (time.time() - request_start))\n        if res.status_code == 410:  # http status gone: session broken\n            raise SessionBrokenError(\"app quit or crash\", res.text)\n        if res.status_code != 200:\n            raise BaseError(data, res.status_code, res.text,\n                            \"HTTP Return code is not 200\", res.text)\n        jsondata = res.json()\n        error = jsondata.get('error')\n        if not error:\n            return jsondata.get('result')\n    \n        err = JSONRPCError(error, method)\n    \n        def is_exception(err, exception_name):\n            return err.exception_name == exception_name or exception_name in err.message\n    \n        if isinstance(\n                err.data,\n                six.string_types) and 'UiAutomation not connected' in err.data:\n            err.__class__ = UiAutomationNotConnectedError\n        elif err.message:\n            if is_exception(err, 'uiautomator.UiObjectNotFoundException'):\n                err.__class__ = UiObjectNotFoundError\n            elif is_exception(\n                    err,\n                    'android.support.test.uiautomator.StaleObjectException'):\n                # StaleObjectException\n                # https://developer.android.com/reference/android/support/test/uiautomator/StaleObjectException.html\n                # A StaleObjectException exception is thrown when a UiObject2 is used after the underlying View has been destroyed.\n                # In this case, it is necessary to call findObject(BySelector) to obtain a new UiObject2 instance.\n                err.__class__ = StaleObjectExceptionError\n            elif is_exception(err, 'java.lang.NullObjectException'):\n                err.__class__ = NullObjectExceptionError\n            elif is_exception(err, 'java.lang.NullPointerException'):\n                err.__class__ = NullPointerExceptionError\n>       raise err\nE       uiautomator2.exceptions.UiObjectNotFoundError: -32001 Jsonrpc error: <androidx.test.uiautomator.UiObjectNotFoundException> data: UiSelector[TEXT=跳过], method: objInfo\n\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:527: UiObjectNotFoundError",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "uiautomator2.exceptions.UiObjectNotFoundError: -32001 Jsonrpc error: <androidx.test.uiautomator.UiObjectNotFoundException> data: UiSelector[TEXT=跳过], method: objInfo",
+    "statusTrace" : "self = <test_mine.TestMine object at 0x00000227F8170708>\ncase = {'id': 'mine_001', '优先级': 'P1', '前置条件': '', '是否执行': 'yes', ...}\n\n    @pytest.mark.parametrize(\"case\", run_ed)\n    def test_mine(self, case):\n        # case_id = case[ExcelConfig.case_id]\n        # print(case_id)\n        # case_catalog = case[ExcelConfig.case_catalog]\n        # case_name = case[ExcelConfig.case_name]\n        # case_priority = case[ExcelConfig.case_priority]\n        # case_is_run = case[ExcelConfig.case_is_run]\n        # case_preconditions = case[ExcelConfig.case_preconditions]\n        # case_step = case[ExcelConfig.case_step]\n        case_step_node = case[ExcelConfig.case_step_node]\n        date1 = analysis(case_step_node)\n        # print(date1)\n        # case_expected_outcome = case[ExcelConfig.case_expected_outcome]\n        case_expected_node = case[ExcelConfig.case_expected_node]\n        data2 = expected_analysis(case_expected_node)\n        print(data2)\n>       d = ExecuteU2(\"851QFDSG22CDZ\", \"com.tencent.hobby\")\n\ntestcase\\test_mine.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nutils\\uiauto_util.py:27: in __init__\n    self.dv(text=\"跳过\").click()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:151: in click\n    x, y = self.center(offset=offset)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:178: in center\n    lx, ly, rx, ry = self.bounds()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:165: in bounds\n    info = self.info\nD:\\Program Files\\Python37\\lib\\site-packages\\decorator.py:232: in fun\n    return caller(func, *(extras + args), **kw)\nD:\\Program Files\\Python37\\lib\\site-packages\\retry\\api.py:74: in retry_decorator\n    logger)\nD:\\Program Files\\Python37\\lib\\site-packages\\retry\\api.py:33: in __retry_internal\n    return f()\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\_selector.py:130: in info\n    return self.jsonrpc.objInfo(self.selector)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:449: in __call__\n    http_timeout)\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:455: in _jsonrpc_retry_call\n    return self._jsonrpc_call(*args, **kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <uiautomator2.Device object at 0x00000227F8170B88>, method = 'objInfo'\nparams = ({'mask': 1, 'childOrSibling': [], 'childOrSiblingSelector': [], 'text': '跳过'},)\nhttp_timeout = 60\n\n    def _jsonrpc_call(self, method, params=[], http_timeout=60):\n        \"\"\" jsonrpc2 call\n        Refs:\n            - http://www.jsonrpc.org/specification\n    \n        Raises:\n            出现的错误一般有2大类:\n                - JSONRPC服务端异常 ServerError\n                - 远程方法返回的错误 RequestError\n        \"\"\"\n        request_start = time.time()\n        data = {\n            \"jsonrpc\": \"2.0\",\n            \"id\": self._jsonrpc_id(method),\n            \"method\": method,\n            \"params\": params,\n        }\n        data = json.dumps(data)\n        res = self.http.post(\"/jsonrpc/0\",\n                             headers={\"Content-Type\": \"application/json\"},\n                             data=data,\n                             timeout=http_timeout)\n    \n        if res.status_code == 502:\n            raise GatewayError(\n                res, \"gateway error, time used %.1fs\" %\n                (time.time() - request_start))\n        if res.status_code == 410:  # http status gone: session broken\n            raise SessionBrokenError(\"app quit or crash\", res.text)\n        if res.status_code != 200:\n            raise BaseError(data, res.status_code, res.text,\n                            \"HTTP Return code is not 200\", res.text)\n        jsondata = res.json()\n        error = jsondata.get('error')\n        if not error:\n            return jsondata.get('result')\n    \n        err = JSONRPCError(error, method)\n    \n        def is_exception(err, exception_name):\n            return err.exception_name == exception_name or exception_name in err.message\n    \n        if isinstance(\n                err.data,\n                six.string_types) and 'UiAutomation not connected' in err.data:\n            err.__class__ = UiAutomationNotConnectedError\n        elif err.message:\n            if is_exception(err, 'uiautomator.UiObjectNotFoundException'):\n                err.__class__ = UiObjectNotFoundError\n            elif is_exception(\n                    err,\n                    'android.support.test.uiautomator.StaleObjectException'):\n                # StaleObjectException\n                # https://developer.android.com/reference/android/support/test/uiautomator/StaleObjectException.html\n                # A StaleObjectException exception is thrown when a UiObject2 is used after the underlying View has been destroyed.\n                # In this case, it is necessary to call findObject(BySelector) to obtain a new UiObject2 instance.\n                err.__class__ = StaleObjectExceptionError\n            elif is_exception(err, 'java.lang.NullObjectException'):\n                err.__class__ = NullObjectExceptionError\n            elif is_exception(err, 'java.lang.NullPointerException'):\n                err.__class__ = NullPointerExceptionError\n>       raise err\nE       uiautomator2.exceptions.UiObjectNotFoundError: -32001 Jsonrpc error: <androidx.test.uiautomator.UiObjectNotFoundException> data: UiSelector[TEXT=跳过], method: objInfo\n\nD:\\Program Files\\Python37\\lib\\site-packages\\uiautomator2\\__init__.py:527: UiObjectNotFoundError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "582553a575a24554",
+      "name" : "log",
+      "source" : "582553a575a24554.txt",
+      "type" : "text/plain",
+      "size" : 349
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "17660-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '男, 编辑资料, 我的购买'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6801c8d97ae8e314.json",
+  "parameterValues" : [ "{'id': 'mine_001', '用例目录': '我的', '用例名称': '入口及展示', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.登录状态，嚯app启动，点击底部【我的】tab', '步骤节点': '我的', '预期结果': '1.嚯logo表示\\n2.分享按钮显示\\n3.设定按钮显示\\n4.用户头像正确表示\\n5.用户名正确表示\\n6.嚯登录xx天，活跃xx天正确表示\\n7.性别，星座，地址，简介表示(如果没设定不表示)\\n8.编辑资料按钮表示\\n9.影响力，粉丝，关注，收藏，心愿单正确总数表示\\n10.我的个人主页区域，没有内容，默认图表示，如果发布过内容，发布内容的图片表示\\n11.我的购买表示\\n12.我的出售表示\\n13.我的优惠券表示', '预期节点': '男, 编辑资料, 我的购买'}" ]
+}

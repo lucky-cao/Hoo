@@ -1,0 +1,56 @@
+{
+  "uid" : "3e51a3927a965e66",
+  "name" : "test_mine[case3]",
+  "fullName" : "testcase.test_mine.TestMine#test_mine",
+  "historyId" : "846a282fa744ba9244f8f13bfc25be28",
+  "time" : {
+    "start" : 1626763466018,
+    "stop" : 1626763530122,
+    "duration" : 64104
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_mine"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestMine"
+  }, {
+    "name" : "host",
+    "value" : "v_linkaica-PC0"
+  }, {
+    "name" : "thread",
+    "value" : "15656-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_mine"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'id': 'mine_004', '用例目录': '个人主页', '用例名称': '我的画面点击用户名', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击用户名，活跃天数区域\\n2.点击个人主页的【<】按钮', '步骤节点': '我的, 2202005276啊啊\\ncom.tencent.hobby:id/btnleft', '预期结果': '1.跳转到用户的个人主页画面\\n2.返回到我的画面', '预期节点': ' , 相册, 我的'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3e51a3927a965e66.json",
+  "parameterValues" : [ "{'id': 'mine_004', '用例目录': '个人主页', '用例名称': '我的画面点击用户名', '优先级': 'P1', '是否执行': 'yes', '前置条件': '', '步骤': '1.嚯app启动》点击底部【我的】tab，我的画面点击用户名，活跃天数区域\\n2.点击个人主页的【<】按钮', '步骤节点': '我的, 2202005276啊啊\\ncom.tencent.hobby:id/btnleft', '预期结果': '1.跳转到用户的个人主页画面\\n2.返回到我的画面', '预期节点': ' , 相册, 我的'}" ]
+}
